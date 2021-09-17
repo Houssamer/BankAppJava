@@ -1,0 +1,32 @@
+package com.banque.entities;
+
+import java.util.Collection;
+import java.util.Date;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("CC")
+public class CompteCourant extends Compte {
+	private double decouvert;
+
+	public CompteCourant(String codeCompte, Date dateCreation, double montant, Client client, double decouvert) {
+		super(codeCompte, dateCreation, montant, client);
+		this.decouvert = decouvert;
+	}
+
+	public CompteCourant() {
+		super();
+	}
+
+	public double getDecouvert() {
+		return decouvert;
+	}
+
+	public void setDecouvert(double decouvert) {
+		this.decouvert = decouvert;
+	}
+	
+	
+}
